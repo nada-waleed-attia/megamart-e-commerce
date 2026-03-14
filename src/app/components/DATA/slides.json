@@ -1,0 +1,281 @@
+{
+  "heroSlides": [
+    {
+      "id": 1,
+      "p": "Best Deal Online on smart watches",
+      "title": "SMART WEARABLE",
+      "subtitle": "UP TO 50% OFF",
+      "image": "/images/slide7.webp",
+      "bgColor": "bg-blue-500"
+    },
+    {
+      "id": 2,
+      "title": "Premium Fruits Fresh from Farm",
+      "subtitle": "ORGANIC & FRESH",
+      "image": "/images/slide2.webp",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "id": 3,
+      "title": "Fashion Trends 2024",
+      "subtitle": "NEW COLLECTION",
+      "image": "/images/slide3.webp",
+      "bgColor": "bg-purple-500"
+    },
+    {
+      "id": 4,
+      "title": "Electronics Mega Sale",
+      "subtitle": "UP TO 50% OFF",
+      "image": "/images/slide4.webp",
+      "bgColor": "bg-red-500"
+    },
+    {
+      "id": 5,
+      "title": "Home & Kitchen Essentials",
+      "subtitle": "QUALITY PRODUCTS",
+      "image": "/images/slide5.jpg",
+      "bgColor": "bg-orange-500"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Galaxy S22 Ultra",
+      "image": "/images/slide1.webp",
+      "price": 32999,
+      "originalPrice": 74999,
+      "discount": 56,
+      "savings": 42000
+    },
+    {
+      "id": 2,
+      "name": "Galaxy M13 (4GB | 64 GB )",
+      "image": "/images/slide2.webp",
+      "price": 10499,
+      "originalPrice": 14999,
+      "discount": 56,
+      "savings": 4500
+    },
+    {
+      "id": 3,
+      "name": "Galaxy M33 (4GB | 64 GB )",
+      "image": "/images/slide3.webp",
+      "price": 16999,
+      "originalPrice": 24999,
+      "discount": 56,
+      "savings": 8000
+    },
+    {
+      "id": 4,
+      "name": "Galaxy M53 (4GB | 64 GB )",
+      "image": "/images/slide4.webp",
+      "price": 31999,
+      "originalPrice": 40999,
+      "discount": 56,
+      "savings": 9000
+    },
+    {
+      "id": 5,
+      "name": "Galaxy S22 Ultra",
+      "image": "/images/slide5.jpg",
+      "price": 67999,
+      "originalPrice": 85999,
+      "discount": 56,
+      "savings": 18000
+    },
+    {
+      "id": 6,
+      "name": "Galaxy A54 (8GB | 128 GB )",
+      "image": "/images/slide6.jpg",
+      "price": 28999,
+      "originalPrice": 45999,
+      "discount": 56,
+      "savings": 17000
+    },
+    {
+      "id": 7,
+      "name": "Galaxy Z Fold 5",
+      "image": "/images/slide7.webp",
+      "price": 154999,
+      "originalPrice": 189999,
+      "discount": 56,
+      "savings": 35000
+    },
+    {
+      "id": 8,
+      "name": "iPhone 14 Pro Max",
+      "image": "/images/slide1.webp",
+      "price": 129999,
+      "originalPrice": 159999,
+      "discount": 56,
+      "savings": 30000
+    },
+    {
+      "id": 9,
+      "name": "OnePlus 11 (8GB | 128 GB )",
+      "image": "/images/slide2.webp",
+      "price": 56999,
+      "originalPrice": 61999,
+      "discount": 56,
+      "savings": 5000
+    },
+    {
+      "id": 10,
+      "name": "Xiaomi 13 Pro",
+      "image": "/images/slide3.webp",
+      "price": 79999,
+      "originalPrice": 89999,
+      "discount": 56,
+      "savings": 10000
+    },
+    {
+      "id": 11,
+      "name": "New Product S1",
+      "image": "/image/s1.jpg",
+      "price": 45999,
+      "originalPrice": 65999,
+      "discount": 30,
+      "savings": 20000
+    },
+    {
+      "id": 12,
+      "name": "New Product S2",
+      "image": "/image/s2.jpg",
+      "price": 38999,
+      "originalPrice": 55999,
+      "discount": 30,
+      "savings": 17000
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Mobile",
+      "image": "/images/slide1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Cosmetics",
+      "image": "/images/slide2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Electronics",
+      "image": "/images/slide3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Furniture",
+      "image": "/images/slide4.webp"
+    },
+    {
+      "id": 5,
+      "name": "Watches",
+      "image": "/images/slide5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Decor",
+      "image": "/images/slide6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Accessories",
+      "image": "/images/slide7.webp"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "IPHONE",
+      "logo": "/images/slide1.webp",
+      "image": "/images/slide1.webp",
+      "bgColor": "#2d2d2d",
+      "discount": "UP to 80% OFF"
+    },
+    {
+      "id": 2,
+      "name": "REALME",
+      "logo": "/images/slide2.webp",
+      "image": "/images/slide2.webp",
+      "bgColor": "#fef3c7",
+      "discount": "UP to 80% OFF"
+    },
+    {
+      "id": 3,
+      "name": "XIAOMI",
+      "logo": "/images/slide3.webp",
+      "image": "/images/slide3.webp",
+      "bgColor": "#fed7aa",
+      "discount": "UP to 80% OFF"
+    },
+    {
+      "id": 4,
+      "name": "SAMSUNG",
+      "logo": "/images/slide4.webp",
+      "image": "/images/slide4.webp",
+      "bgColor": "#dbeafe",
+      "discount": "UP to 80% OFF"
+    },
+    {
+      "id": 5,
+      "name": "OPPO",
+      "logo": "/images/slide5.jpg",
+      "image": "/images/slide5.jpg",
+      "bgColor": "#e0e7ff",
+      "discount": "UP to 80% OFF"
+    },
+    {
+      "id": 6,
+      "name": "VIVO",
+      "logo": "/images/slide6.jpg",
+      "image": "/images/slide6.jpg",
+      "bgColor": "#fce7f3",
+      "discount": "UP to 80% OFF"
+    }
+  ],
+  "dailyEssentials": [
+    {
+      "id": 1,
+      "name": "Daily Essentials",
+      "image": "/images/slide1.webp",
+      "discount": "UP to 50% OFF"
+    },
+    {
+      "id": 2,
+      "name": "Vegitables",
+      "image": "/images/slide2.webp",
+      "discount": "UP to 50% OFF"
+    },
+    {
+      "id": 3,
+      "name": "Fruits",
+      "image": "/images/slide3.webp",
+      "discount": "UP to 50% OFF"
+    },
+    {
+      "id": 4,
+      "name": "Strowberry",
+      "image": "/images/slide4.webp",
+      "discount": "UP to 50% OFF"
+    },
+    {
+      "id": 5,
+      "name": "Mango",
+      "image": "/images/slide5.jpg",
+      "discount": "UP to 50% OFF"
+    },
+    {
+      "id": 6,
+      "name": "Cherry",
+      "image": "/images/slide6.jpg",
+      "discount": "UP to 50% OFF"
+    },
+    {
+      "id": 7,
+      "name": "Apple",
+      "image": "/images/slide7.webp",
+      "discount": "UP to 50% OFF"
+    }
+  ]
+}

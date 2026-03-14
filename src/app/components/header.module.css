@@ -1,0 +1,175 @@
+/* header1 */
+.headertop{
+    background-color: rgb(243, 242, 242);
+}
+.headericon{
+    color: rgb(64, 98, 247);
+    padding-top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 10px;
+}
+.navlinks{
+    margin-right: 7rem;
+}
+.welcometext{
+    color: rgb(144, 137, 137);
+    margin-left: 90px;
+}
+.deliverybar{
+    padding-left: 1rem; 
+}
+.sapratore{
+    color: rgb(144, 137, 137);
+    margin-left: 3rem; 
+}
+/* end header 1 */
+/* header 2 */
+.menubox {
+  width: 60px;
+  height: 60px;
+  background: #f7f7f8;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding-left: 15px;
+  z-index: auto;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menubox:hover {
+  background: rgb(225, 235, 255);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(90, 150, 241, 0.2);
+}
+
+.line {
+  display: block; /* ensure span occupies width/height */
+  height: 2px;
+  background: rgb(90, 150, 241);
+  border-radius: 4px;
+}
+/* add spacing between lines so they stack visibly */
+.line + .line {
+  margin-top: 4px;
+}
+
+.line1 {
+  width: 30px;
+  height: 2px;
+  background: rgb(90, 150, 241);
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.line2 {
+  width: 22px;
+  height: 2px;
+  background: rgb(90, 150, 241);
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.line3 {
+  width: 14px;
+  height: 2px;
+  background: rgb(90, 150, 241);
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.menubox:hover .line1 {
+  width: 30px;
+  background:rgb(90, 150, 241);
+}
+
+.menubox:hover .line2 {
+  width: 30px;
+  background: rgb(90, 150, 241);
+}
+
+.menubox:hover .line3 {
+  width: 30px;
+  background: rgb(90, 150, 241);
+}
+.welcometext2{
+    color: rgb(90, 150, 241);
+    margin-left: 120px;
+    font-size: 190%;
+    font-weight: bold;
+}
+.searchinput{
+    background-color: rgb(242, 245, 249);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    padding-left: 3rem;
+    width: 40rem;
+    margin-left: 90px;
+    border: none solid 1px;
+}
+.headertop2{
+    background-color: rgb(252, 251, 251);
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.searchinput::placeholder {
+    color: rgb(71, 69, 69); 
+    font-size: 0.875rem; 
+    font-style: italic; 
+    opacity: 0.8; 
+   padding-left: 3rem;
+}
+.headericon2{
+    color: rgb(64, 128, 247);
+    padding-top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.deliverybar2{
+    padding-left: 1rem;
+
+}
+.navlinks2{
+    margin-right: 1rem;
+    font-size: 90%;
+    font-weight: bold;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Cart Badge Styles */
+.cartIconWrapper {
+    position: relative;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*end header 2 */
+

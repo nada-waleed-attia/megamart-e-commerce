@@ -1,0 +1,357 @@
+/* Brands Page Styles */
+.brandsPage {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageHeader h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.pageDescription {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filters Section */
+.filtersSection {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.filterGroup label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.filterSelect {
+  padding: 10px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Brands Grid */
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Brand Card */
+.brandCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.brandCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.brandHeader {
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brandLogo {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.brandInfo {
+  flex: 1;
+}
+
+.brandName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.discount {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.brandContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.brandImageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.brandImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brandCard:hover .brandImage {
+  transform: scale(1.05);
+}
+
+.brandDetails {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.brandStats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.stars span {
+  font-size: 16px;
+  color: #ddd;
+  transition: color 0.2s ease;
+}
+
+.stars .filled {
+  color: #ffc107;
+}
+
+.ratingText {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.viewBrandBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.viewBrandBtn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  transform: translateY(-1px);
+}
+
+.viewBrandBtn svg {
+  flex-shrink: 0;
+}
+
+.noBrands {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.noBrands h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.noBrands p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .brandsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandsPage {
+    padding: 15px;
+  }
+  
+  .filtersSection {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .filterGroup {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .brandsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .brandHeader {
+    padding: 16px;
+  }
+  
+  .brandLogo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .brandName {
+    font-size: 1.2rem;
+  }
+  
+  .brandImageContainer {
+    height: 180px;
+  }
+  
+  .brandDetails {
+    padding: 16px;
+  }
+  
+  .brandStats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .viewBrandBtn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandsPage {
+    padding: 10px;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .filtersSection {
+    padding: 16px;
+  }
+  
+  .brandHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .brandImageContainer {
+    height: 160px;
+  }
+  
+  .brandDetails {
+    padding: 12px;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+  }
+  
+  .viewBrandBtn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
