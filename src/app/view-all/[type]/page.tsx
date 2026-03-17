@@ -172,14 +172,14 @@ const ViewAllPage = () => {
                   <div className={styles.priceSection}>
                     <div className={styles.priceContainer}>
                       <span className={styles.currentPrice}>
-                        ₹{item.price.toLocaleString()}
+                        {item.price.toLocaleString()} ج.م
                       </span>
-                      <span className={styles.originalPrice}>₹{item.originalPrice.toLocaleString()}</span>
+                      <span className={styles.originalPrice}>{item.originalPrice.toLocaleString()} ج.م</span>
                     </div>
                   </div>
 
                   <div className={styles.savings}>
-                    Save ₹{item.savings.toLocaleString()}
+                    وفر {item.savings.toLocaleString()} ج.م
                   </div>
                 </>
               )}

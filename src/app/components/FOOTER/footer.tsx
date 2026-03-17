@@ -1,10 +1,43 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './footer.module.css';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessage('الرجاء إدخال بريد إلكتروني صحيح');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      // TODO: Replace with actual API call when backend is ready
+      // const response = await newsletterService.subscribe(email);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setMessage('تم الاشتراك بنجاح! شكراً لك');
+      setEmail('');
+    } catch (error) {
+      setMessage('حدث خطأ، الرجاء المحاولة مرة أخرى');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.topSection}>
@@ -101,6 +134,34 @@ const Footer = () => {
               <li><a href="#">E-waste Policy</a></li>
               <li><a href="#">Cancellation & Return Policy</a></li>
             </ul>
+          </div>
+
+          <div className={styles.column}>
+            <h4>Newsletter</h4>
+            <p className={styles.newsletterText}>Subscribe to get updates on offers and news</p>
+            <form onSubmit={handleNewsletterSubmit} className={styles.newsletterForm}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+                className={styles.newsletterInput}
+                required
+              />
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className={styles.newsletterButton}
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+              </button>
+            </form>
+            {message && (
+              <p className={`${styles.newsletterMessage} ${message.includes('نجاح') || message.includes('شكراً') ? styles.success : styles.error}`}>
+                {message}
+              </p>
+            )}
           </div>
         </div>
       </div>

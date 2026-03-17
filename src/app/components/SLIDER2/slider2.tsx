@@ -65,10 +65,10 @@ const ProductSlider = () => {
               <div className={styles.productInfo}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <div className={styles.priceContainer}>
-                  <span className={styles.price}>₹{product.price.toLocaleString()}</span>
-                  <span className={styles.originalPrice}>₹{product.originalPrice.toLocaleString()}</span>
+                  <span className={styles.price}>{product.price.toLocaleString()} ج.م</span>
+                  <span className={styles.originalPrice}>{product.originalPrice.toLocaleString()} ج.م</span>
                 </div>
-                <p className={styles.savings}>Save - ₹{product.savings.toLocaleString()}</p>
+                <p className={styles.savings}>وفر {product.savings.toLocaleString()} ج.م</p>
               </div>
             </Link>
           ))}

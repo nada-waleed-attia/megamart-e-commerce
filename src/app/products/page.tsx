@@ -126,14 +126,14 @@ const ProductsPage = () => {
               <div className={styles.priceSection}>
                 <div className={styles.priceContainer}>
                   <span className={styles.currentPrice}>
-                    ₹{product.price.toLocaleString()}
+                    {product.price.toLocaleString()} ج.م
                   </span>
-                  <span className={styles.originalPrice}>₹{product.originalPrice.toLocaleString()}</span>
+                  <span className={styles.originalPrice}>{product.originalPrice.toLocaleString()} ج.م</span>
                 </div>
               </div>
 
               <div className={styles.savings}>
-                Save ₹{product.savings.toLocaleString()}
+                وفر {product.savings.toLocaleString()} ج.م
               </div>
 
               <button 

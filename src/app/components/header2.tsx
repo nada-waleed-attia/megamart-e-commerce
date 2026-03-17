@@ -5,14 +5,24 @@ import styles from "./header.module.css";
 import { MdShoppingCart } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
-import { FaTractor } from "react-icons/fa6";
-import React from "react";
+import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import UserMenu from './auth/user-menu';
 import { useCart } from './cart/cart-context';
 
 
 const Header2 = () => {
   const { cartCount } = useCart();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
   return (
     <>
     
@@ -23,23 +33,75 @@ const Header2 = () => {
             <div className="flex-shrink-0">
                 <span className={styles.welcometext2}>MegaMart</span>
             </div>
-            <div className={`${styles.menubox} absolute left-4 top-1/2 transform -translate-y-1/2`}>
-      <span className={styles.line1}></span>
-      <span className={styles.line2}></span>
-      <span className={styles.line3}></span>
-    </div>
+            <div 
+              className={`${styles.menubox} absolute left-4 top-1/2 transform -translate-y-1/2`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              style={{ cursor: 'pointer' }}
+            >
+              <span className={styles.line1}></span>
+              <span className={styles.line2}></span>
+              <span className={styles.line3}></span>
+            </div>
+
+            {/* Slide Menu Overlay */}
+            {isMenuOpen && (
+              <div className={styles.menuOverlay} onClick={() => setIsMenuOpen(false)} />
+            )}
+
+            {/* Slide Menu */}
+            <div className={`${styles.slideMenu} ${isMenuOpen ? styles.slideMenuOpen : ''}`}>
+              <div className={styles.slideMenuHeader}>
+                <h2>Menu</h2>
+                <button onClick={() => setIsMenuOpen(false)} className={styles.closeBtn}>
+                  ✕
+                </button>
+              </div>
+
+              <div className={styles.slideMenuContent}>
+                <div className={styles.menuGroup}>
+                  <h3>Pages</h3>
+                  <Link href="/" onClick={() => setIsMenuOpen(false)}>🏠 Home</Link>
+                  <Link href="/shop" onClick={() => setIsMenuOpen(false)}>🛍️ Shop</Link>
+                  <Link href="/about" onClick={() => setIsMenuOpen(false)}>ℹ️ About Us</Link>
+                  <Link href="/contact" onClick={() => setIsMenuOpen(false)}>📧 Contact Us</Link>
+                </div>
+
+                <div className={styles.menuGroup}>
+                  <h3>Categories</h3>
+                  <Link href="/view-all/categories" onClick={() => setIsMenuOpen(false)}>📱 Mobile</Link>
+                  <Link href="/view-all/categories" onClick={() => setIsMenuOpen(false)}>💄 Cosmetics</Link>
+                  <Link href="/view-all/categories" onClick={() => setIsMenuOpen(false)}>⚡ Electronics</Link>
+                </div>
+
+                <div className={styles.menuGroup}>
+                  <h3>Shop</h3>
+                  <Link href="/view-all/products" onClick={() => setIsMenuOpen(false)}>🛒 All Products</Link>
+                  <Link href="/view-all/brands" onClick={() => setIsMenuOpen(false)}>⭐ Brands</Link>
+                  <Link href="/view-all/essentials" onClick={() => setIsMenuOpen(false)}>🥗 Daily Essentials</Link>
+                </div>
+
+                <div className={styles.menuGroup}>
+                  <h3>Account</h3>
+                  <Link href="/account" onClick={() => setIsMenuOpen(false)}>👤 My Account</Link>
+                  <Link href="/cart" onClick={() => setIsMenuOpen(false)}>🛒 Cart</Link>
+                  <Link href="/signin" onClick={() => setIsMenuOpen(false)}>🔐 Sign In</Link>
+                </div>
+              </div>
+            </div>
             {/* center section - search */}
             <div className="flex items-center gap-2">
-                <div className="relative">
+                <form onSubmit={handleSearch} className="relative">
                     <input 
                         type="text"
                         placeholder="Search essentials , groceries and more ..." 
                         className={`${styles.searchinput} pr-10`}
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
-                    <CiSearch className={`${styles.headericon2} absolute left-25 top-1/2 transform -translate-y-1/2`} />
-                </div>
-                <button className="bg-foreground text-background px-8 py-11 rounded">
-                </button>
+                    <button type="submit" className={`${styles.searchButton}`}>
+                        <CiSearch className={`${styles.headericon2} absolute left-25 top-1/2 transform -translate-y-1/2`} />
+                    </button>
+                </form>
                 <div className={`${styles.menubox2} absolute left-1 top-1/2 transform -translate-y-1/2`}>
                    <span className={styles.line}></span>
                    <span className={styles.line}></span>

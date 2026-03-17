@@ -107,7 +107,7 @@ const CategoryPage = () => {
 
           <div className={styles.availability}>
             <p>✓ In Stock</p>
-            <p>✓ Free Delivery on orders above ₹500</p>
+            <p>✓ Free Delivery on orders above 500 ج.م</p>
             <p>✓ Cash on Delivery available</p>
           </div>
         </div>

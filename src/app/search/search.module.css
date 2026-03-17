@@ -1,0 +1,179 @@
+.searchPage {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.searchHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.searchHeader h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.searchQuery {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.searchQuery span {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.resultCount {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.productCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.productImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #f3f4f6;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ef4444;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.productInfo {
+  padding: 1rem;
+}
+
+.category {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #667eea;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.productInfo h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.priceSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #059669;
+}
+
+.originalPrice {
+  font-size: 1rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.savings {
+  font-size: 0.85rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.noResults {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.noResultsIcon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.noResults h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.noResults p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.browseBtn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.browseBtn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .searchHeader h1 {
+    font-size: 2rem;
+  }
+
+  .productsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

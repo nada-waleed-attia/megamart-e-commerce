@@ -40,7 +40,8 @@
   "products": [
     {
       "id": 1,
-      "name": "Galaxy S22 Ultra",
+      "name": "Smart TV 4K",
+      "category": "Electronics",
       "image": "/images/slide1.webp",
       "price": 32999,
       "originalPrice": 74999,
@@ -49,89 +50,99 @@
     },
     {
       "id": 2,
-      "name": "Galaxy M13 (4GB | 64 GB )",
+      "name": "Beauty Care Set",
+      "category": "Cosmetics",
       "image": "/images/slide2.webp",
       "price": 10499,
       "originalPrice": 14999,
-      "discount": 56,
+      "discount": 30,
       "savings": 4500
     },
     {
       "id": 3,
-      "name": "Galaxy M33 (4GB | 64 GB )",
+      "name": "Skincare Products",
+      "category": "Cosmetics",
       "image": "/images/slide3.webp",
       "price": 16999,
       "originalPrice": 24999,
-      "discount": 56,
+      "discount": 32,
       "savings": 8000
     },
     {
       "id": 4,
-      "name": "Galaxy M53 (4GB | 64 GB )",
+      "name": "Makeup Collection",
+      "category": "Cosmetics",
       "image": "/images/slide4.webp",
       "price": 31999,
       "originalPrice": 40999,
-      "discount": 56,
+      "discount": 22,
       "savings": 9000
     },
     {
       "id": 5,
-      "name": "Galaxy S22 Ultra",
+      "name": "Washing Machine",
+      "category": "Electronics",
       "image": "/images/slide5.jpg",
       "price": 67999,
       "originalPrice": 85999,
-      "discount": 56,
+      "discount": 21,
       "savings": 18000
     },
     {
       "id": 6,
-      "name": "Galaxy A54 (8GB | 128 GB )",
+      "name": "Hair Care Products",
+      "category": "Cosmetics",
       "image": "/images/slide6.jpg",
       "price": 28999,
       "originalPrice": 45999,
-      "discount": 56,
+      "discount": 37,
       "savings": 17000
     },
     {
       "id": 7,
-      "name": "Galaxy Z Fold 5",
-      "image": "/images/slide7.webp",
-      "price": 154999,
-      "originalPrice": 189999,
-      "discount": 56,
-      "savings": 35000
-    },
-    {
-      "id": 8,
       "name": "iPhone 14 Pro Max",
-      "image": "/images/slide1.webp",
+      "category": "Mobile",
+      "image": "/image/s1.jpg",
       "price": 129999,
       "originalPrice": 159999,
-      "discount": 56,
+      "discount": 19,
       "savings": 30000
     },
     {
+      "id": 8,
+      "name": "Laptop Gaming",
+      "category": "Electronics",
+      "image": "/image/s2.jpg",
+      "price": 154999,
+      "originalPrice": 189999,
+      "discount": 18,
+      "savings": 35000
+    },
+    {
       "id": 9,
-      "name": "OnePlus 11 (8GB | 128 GB )",
-      "image": "/images/slide2.webp",
+      "name": "Refrigerator",
+      "category": "Electronics",
+      "image": "/images/slide1.webp",
       "price": 56999,
       "originalPrice": 61999,
-      "discount": 56,
+      "discount": 8,
       "savings": 5000
     },
     {
       "id": 10,
-      "name": "Xiaomi 13 Pro",
-      "image": "/images/slide3.webp",
+      "name": "Perfume Collection",
+      "category": "Cosmetics",
+      "image": "/images/slide2.webp",
       "price": 79999,
       "originalPrice": 89999,
-      "discount": 56,
+      "discount": 11,
       "savings": 10000
     },
     {
       "id": 11,
-      "name": "New Product S1",
-      "image": "/image/s1.jpg",
+      "name": "Air Conditioner",
+      "category": "Electronics",
+      "image": "/images/slide5.jpg",
       "price": 45999,
       "originalPrice": 65999,
       "discount": 30,
@@ -139,8 +150,9 @@
     },
     {
       "id": 12,
-      "name": "New Product S2",
-      "image": "/image/s2.jpg",
+      "name": "Samsung Galaxy S23",
+      "category": "Mobile",
+      "image": "/image/s1.jpg",
       "price": 38999,
       "originalPrice": 55999,
       "discount": 30,
@@ -162,26 +174,6 @@
       "id": 3,
       "name": "Electronics",
       "image": "/images/slide3.webp"
-    },
-    {
-      "id": 4,
-      "name": "Furniture",
-      "image": "/images/slide4.webp"
-    },
-    {
-      "id": 5,
-      "name": "Watches",
-      "image": "/images/slide5.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Decor",
-      "image": "/images/slide6.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Accessories",
-      "image": "/images/slide7.webp"
     }
   ],
   "brands": [

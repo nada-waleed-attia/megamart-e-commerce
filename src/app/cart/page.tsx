@@ -60,9 +60,9 @@ const CartPage = () => {
                   {item.discount && (
                     <p className={styles.discount}>-{item.discount}% OFF</p>
                   )}
-                  <p className={styles.itemPrice}>₹{item.price.toLocaleString()}</p>
+                  <p className={styles.itemPrice}>{item.price.toLocaleString()} ج.م</p>
                   {item.originalPrice && (
-                    <p className={styles.originalPrice}>₹{item.originalPrice.toLocaleString()}</p>
+                    <p className={styles.originalPrice}>{item.originalPrice.toLocaleString()} ج.م</p>
                   )}
                 </div>
 
@@ -83,7 +83,7 @@ const CartPage = () => {
                 </div>
 
                 <div className={styles.itemTotal}>
-                  <p>₹{(item.price * item.quantity).toLocaleString()}</p>
+                  <p>{(item.price * item.quantity).toLocaleString()} ج.م</p>
                   <button 
                     onClick={() => removeFromCart(item.id)}
                     className={styles.removeBtn}
@@ -102,7 +102,7 @@ const CartPage = () => {
             
             <div className={styles.summaryRow}>
               <span>Subtotal</span>
-              <span>₹{subtotal.toLocaleString()}</span>
+              <span>{subtotal.toLocaleString()} ج.م</span>
             </div>
             
             <div className={styles.summaryRow}>
@@ -112,12 +112,12 @@ const CartPage = () => {
             
             <div className={styles.summaryRow}>
               <span>Tax (18%)</span>
-              <span>₹{Math.round(tax).toLocaleString()}</span>
+              <span>{Math.round(tax).toLocaleString()} ج.م</span>
             </div>
             
             <div className={`${styles.summaryRow} ${styles.totalRow}`}>
               <span>Total</span>
-              <span>₹{Math.round(total).toLocaleString()}</span>
+              <span>{Math.round(total).toLocaleString()} ج.م</span>
             </div>
 
             <input 

@@ -434,7 +434,7 @@ const CheckoutPage = () => {
                     <p>Qty: {item.quantity}</p>
                   </div>
                 </div>
-                <span>₹{(item.price * item.quantity).toLocaleString()}</span>
+                <span>{(item.price * item.quantity).toLocaleString()} ج.م</span>
               </div>
             ))}
           </div>
@@ -454,7 +454,7 @@ const CheckoutPage = () => {
             </div>
             <div className={`${styles.summaryRow} ${styles.totalRow}`}>
               <span>Total</span>
-              <span>₹{Math.round(total).toLocaleString()}</span>
+              <span>{Math.round(total).toLocaleString()} ج.م</span>
             </div>
           </div>
         </div>
