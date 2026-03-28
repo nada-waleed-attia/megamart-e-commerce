@@ -182,26 +182,164 @@
   right: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
-    width: 95%;
+    width: 94%;
+    margin: 30px auto;
   }
 
   .title {
-    font-size: 22px;
-  }
-
-  .sliderWrapper {
-    padding: 0 40px;
+    font-size: 24px;
   }
 
   .productCard {
-    min-width: 200px;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 25px auto;
+    padding: 15px 0;
+  }
+
+  .header {
+    margin-bottom: 20px;
+    padding: 0 5px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .viewAll {
+    font-size: 14px;
+  }
+
+  .sliderWrapper {
+    padding: 0 35px;
+  }
+
+  .slider {
+    gap: 15px;
+    padding: 15px 5px;
+  }
+
+  .productCard {
+    min-width: 180px;
+    padding: 15px;
+  }
+
+  .discountBadge {
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .imageContainer {
+    height: 180px;
+    margin-bottom: 12px;
+  }
+
+  .productName {
+    font-size: 14px;
+    min-height: 35px;
+    margin-bottom: 8px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .originalPrice {
+    font-size: 14px;
+  }
+
+  .savings {
+    font-size: 12px;
   }
 
   .navButton {
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 98%;
+    margin: 20px auto;
+    padding: 10px 0;
+  }
+
+  .header {
+    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .viewAll {
+    font-size: 13px;
+  }
+
+  .sliderWrapper {
+    padding: 0 30px;
+  }
+
+  .slider {
+    gap: 12px;
+    padding: 12px 3px;
+  }
+
+  .productCard {
+    min-width: 160px;
+    padding: 12px;
+  }
+
+  .discountBadge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .imageContainer {
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .productName {
+    font-size: 13px;
+    min-height: 32px;
+  }
+
+  .priceContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .originalPrice {
+    font-size: 13px;
+  }
+
+  .savings {
+    font-size: 11px;
+  }
+
+  .navButton {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
   }
 }

@@ -335,3 +335,189 @@
     left: -280px;
   }
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .welcometext {
+    margin-left: 40px;
+  }
+
+  .searchinput {
+    width: 30rem;
+    margin-left: 40px;
+  }
+
+  .welcometext2 {
+    margin-left: 60px;
+    font-size: 160%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navlinks {
+    margin-right: 3rem;
+  }
+
+  .searchinput {
+    width: 25rem;
+    margin-left: 20px;
+  }
+
+  .welcometext2 {
+    margin-left: 40px;
+    font-size: 140%;
+  }
+
+  .sapratore {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header 1 */
+  .headertop {
+    padding: 0.5rem 0;
+  }
+
+  .welcometext {
+    display: none;
+  }
+
+  .navlinks {
+    margin-right: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .sapratore {
+    margin-left: 1rem;
+  }
+
+  .deliverybar {
+    padding-left: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Header 2 */
+  .headertop2 {
+    padding: 0.75rem 0;
+  }
+
+  .menubox {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    padding-left: 10px;
+  }
+
+  .line1, .line2, .line3 {
+    width: 25px;
+  }
+
+  .welcometext2 {
+    display: none;
+  }
+
+  .searchinput {
+    width: 100%;
+    max-width: 300px;
+    margin-left: 15px;
+    padding: 0.625rem;
+    padding-left: 2.5rem;
+    font-size: 0.875rem;
+  }
+
+  .navlinks2 {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .headericon2 {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .cartBadge {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    top: -6px;
+    right: -6px;
+  }
+
+  .dropdownMenu {
+    min-width: 180px;
+    right: 0;
+    left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .headertop {
+    font-size: 0.75rem;
+  }
+
+  .navlinks {
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .sapratore {
+    margin-left: 0.5rem;
+  }
+
+  .deliverybar {
+    padding-left: 0.25rem;
+  }
+
+  .menubox {
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    padding-left: 8px;
+  }
+
+  .line1, .line2, .line3 {
+    width: 20px;
+  }
+
+  .searchinput {
+    max-width: 200px;
+    margin-left: 10px;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .searchButton {
+    left: 0.5rem;
+  }
+
+  .headericon2 {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .navlinks2 {
+    font-size: 0.7rem;
+    gap: 0.25rem;
+  }
+
+  .cartBadge {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .dropdownMenu {
+    min-width: 150px;
+    font-size: 0.875rem;
+  }
+
+  .dropdownMenu a {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+}

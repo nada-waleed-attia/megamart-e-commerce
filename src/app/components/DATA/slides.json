@@ -5,7 +5,7 @@
       "p": "Best Deal Online on smart watches",
       "title": "SMART WEARABLE",
       "subtitle": "UP TO 50% OFF",
-      "image": "/images/slide7.webp",
+      "image": "/image/slide7.webp",
       "bgColor": "bg-blue-500"
     },
     {
@@ -266,7 +266,7 @@
     {
       "id": 7,
       "name": "Apple",
-      "image": "/images/slide7.webp",
+      "image": "/image/slide7.webp",
       "discount": "UP to 50% OFF"
     }
   ]

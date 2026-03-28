@@ -272,23 +272,198 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
   .productContainer {
-    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .mainImage {
-    height: 400px;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    height: 450px;
+    padding: 30px;
   }
 
   .productName {
+    font-size: 28px;
+  }
+
+  .discountText {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .productContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .mainImage {
+    height: 350px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .brandLogoWrapper {
+    padding: 20px;
+  }
+
+  .brandLogo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .productImage {
+    width: 200px !important;
+    height: 250px !important;
+  }
+
+  .discountBadge {
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .productName {
+    font-size: 22px;
+  }
+
+  .discountText {
+    font-size: 22px;
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+
+  .reviews {
+    font-size: 12px;
+  }
+
+  .description h3,
+  .features h3 {
+    font-size: 18px;
+  }
+
+  .description p {
+    font-size: 14px;
+  }
+
+  .features li {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  .quantitySection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .actions {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .addToCartBtn,
+  .buyNowBtn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .availability {
+    padding: 12px;
+  }
+
+  .availability p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .mainImage {
+    height: 300px;
+    padding: 15px;
+  }
+
+  .brandLogoWrapper {
+    padding: 15px;
+  }
+
+  .brandLogo {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .productImage {
+    width: 150px !important;
+    height: 200px !important;
+  }
+
+  .discountBadge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .productName {
+    font-size: 20px;
+  }
+
+  .discountText {
+    font-size: 20px;
+  }
+
+  .description h3,
+  .features h3 {
+    font-size: 16px;
+  }
+
+  .description p,
+  .features li {
+    font-size: 13px;
+  }
+
+  .quantityBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .quantity {
+    min-width: 35px;
+    font-size: 16px;
+  }
+
+  .addToCartBtn,
+  .buyNowBtn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .notFound h1 {
+    font-size: 32px;
+  }
+
+  .notFound a {
+    font-size: 16px;
   }
 }

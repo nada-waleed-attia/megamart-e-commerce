@@ -128,6 +128,7 @@ const BrandPage = () => {
           </div>
         </div>
       </div>
+      </div>
       <Footer />
     </>
   );
