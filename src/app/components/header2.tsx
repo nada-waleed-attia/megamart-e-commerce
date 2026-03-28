@@ -28,19 +28,20 @@ const Header2 = () => {
     
 
     <header className="w-full bg-white shadow-md">
-        <div className={`${styles.headertop2} flex justify-between items-center relative`}>
-            {/* left section - categories */}
-            <div className="flex-shrink-0">
-                <span className={styles.welcometext2}>MegaMart</span>
-            </div>
+        <div className={`${styles.headertop2} flex justify-between items-center`}>
+            {/* Menu Button */}
             <div 
-              className={`${styles.menubox} absolute left-4 top-1/2 transform -translate-y-1/2`}
+              className={styles.menubox}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              style={{ cursor: 'pointer' }}
             >
               <span className={styles.line1}></span>
               <span className={styles.line2}></span>
               <span className={styles.line3}></span>
+            </div>
+
+            {/* Brand Name - Desktop Only */}
+            <div className="flex-shrink-0 hidden md:block">
+                <span className={styles.welcometext2}>MegaMart</span>
             </div>
 
             {/* Slide Menu Overlay */}
@@ -88,32 +89,29 @@ const Header2 = () => {
                 </div>
               </div>
             </div>
-            {/* center section - search */}
-            <div className="flex items-center gap-2">
-                <form onSubmit={handleSearch} className="relative">
+
+            {/* Search - Center */}
+            <div className="flex-1 flex items-center justify-center px-2 md:px-4">
+                <form onSubmit={handleSearch} className="relative w-full max-w-2xl">
                     <input 
                         type="text"
-                        placeholder="Search essentials , groceries and more ..." 
-                        className={`${styles.searchinput} pr-10`}
+                        placeholder="Search essentials, groceries and more..." 
+                        className={styles.searchinput}
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
-                    <button type="submit" className={`${styles.searchButton}`}>
-                        <CiSearch className={`${styles.headericon2} absolute left-25 top-1/2 transform -translate-y-1/2`} />
+                    <button type="submit" className={styles.searchButton}>
+                        <CiSearch className={styles.headericon2} />
                     </button>
                 </form>
-                <div className={`${styles.menubox2} absolute left-1 top-1/2 transform -translate-y-1/2`}>
-                   <span className={styles.line}></span>
-                   <span className={styles.line}></span>
-                   <span className={styles.line}></span>
-                </div>
             </div>
 
-            {/* right section - account & cart */}
+            {/* Account & Cart - Right */}
             <div className={styles.deliverybar2}>
-                <nav className={`${styles.navlinks2} flex justify-between items-center`}>                    <CiUser className={styles.headericon2} />                    <Link href="/signin" className="text-gray-600 hover:text-gray-800 text-sm">
+                <nav className={`${styles.navlinks2} flex items-center`}>
+                    <CiUser className={styles.headericon2} />
+                    <Link href="/signin" className="text-gray-600 hover:text-gray-800 text-sm hidden md:inline">
                         Sign Up / Sign In
-                        {/*<span className={styles.sapratore2}>|</span>*/}
                     </Link>
                     <UserMenu />
                     <div className={styles.cartIconWrapper}>
@@ -124,7 +122,7 @@ const Header2 = () => {
                         </span>
                       )}
                     </div>
-                    <Link href="/cart" className="text-gray-600 hover:text-gray-200 text-sm">
+                    <Link href="/cart" className="text-gray-600 hover:text-gray-800 text-sm hidden md:inline">
                         Cart
                     </Link>
                 </nav>

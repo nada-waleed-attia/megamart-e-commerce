@@ -51,13 +51,13 @@ const Categories = () => {
 
   return (
     <>
-      <div className="w-full overflow-x-auto px-4 py-3 bg-gray-50 border-b pl-15 relative z-50">
-        <div className="flex gap-3">
+      <div className="w-full overflow-x-auto px-2 sm:px-4 py-2 sm:py-3 bg-gray-50 border-b relative z-50">
+        <div className="flex gap-2 sm:gap-3">
           {categories.map((cat, index) => (
             <div key={cat.name} className="relative flex-shrink-0">
               <button
                 onClick={() => toggleDropdown(index)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap ${
                   index === 0
                     ? "bg-blue-500 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -67,12 +67,12 @@ const Categories = () => {
               </button>
               
               {openDropdown === index && (
-                <div className="fixed bg-white shadow-lg rounded-lg py-2 min-w-[200px] z-[9999] border border-gray-200 mt-2">
+                <div className="fixed bg-white shadow-lg rounded-lg py-2 min-w-[180px] sm:min-w-[200px] z-[9999] border border-gray-200 mt-2">
                   {cat.subcategories.map((sub) => (
                     <a
                       key={sub}
                       href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                      className="block px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
                     >
                       {sub}
                     </a>
