@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './admin.module.css';
@@ -12,7 +12,9 @@ import {
   MdShoppingCart, 
   MdPalette, 
   MdSettings,
-  MdNotifications
+  MdNotifications,
+  MdMenu,
+  MdClose
 } from 'react-icons/md';
 
 interface MenuItem {
@@ -29,7 +31,13 @@ export default function AdminLayout({
 }) {
   const pathname = usePathname();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>('الإعدادات'); // فتح قائمة الإعدادات افتراضياً
+
+  // Close mobile sidebar when route changes
+  useEffect(() => {
+    setIsMobileSidebarOpen(false);
+  }, [pathname]);
 
   const menuItems: MenuItem[] = [
     { icon: <MdDashboard size={20} />, label: 'الرئيسية', path: '/dashboard-admin/dashboard' },
@@ -82,18 +90,33 @@ export default function AdminLayout({
 
   return (
     <div className={styles.adminLayout}>
+      {/* Mobile Overlay */}
+      {isMobileSidebarOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={() => setIsMobileSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <aside className={`${styles.sidebar} ${isSidebarCollapsed ? styles.collapsed : ''}`}>
+      <aside className={`${styles.sidebar} ${isSidebarCollapsed ? styles.collapsed : ''} ${isMobileSidebarOpen ? styles.mobileOpen : ''}`}>
         <div className={styles.sidebarHeader}>
           <h2 className={styles.logo}>
             {isSidebarCollapsed ? 'MM' : 'MegaMart Admin'}
           </h2>
           <button
-            className={styles.collapseBtn}
+            className={`${styles.collapseBtn} ${styles.desktopOnly}`}
             onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
             aria-label="Toggle sidebar"
           >
             {isSidebarCollapsed ? '→' : '←'}
+          </button>
+          <button
+            className={`${styles.collapseBtn} ${styles.mobileOnly}`}
+            onClick={() => setIsMobileSidebarOpen(false)}
+            aria-label="Close sidebar"
+          >
+            <MdClose size={24} />
           </button>
         </div>
 
@@ -151,6 +174,13 @@ export default function AdminLayout({
         {/* Topbar */}
         <header className={styles.topbar}>
           <div className={styles.topbarLeft}>
+            <button
+              className={styles.mobileMenuBtn}
+              onClick={() => setIsMobileSidebarOpen(true)}
+              aria-label="Open menu"
+            >
+              <MdMenu size={24} />
+            </button>
             <h1 className={styles.pageTitle}>
               {menuItems.find(item => item.path === pathname)?.label || 'لوحة التحكم'}
             </h1>
@@ -164,7 +194,7 @@ export default function AdminLayout({
 
             <div className={styles.userMenu}>
               <div className={styles.userAvatar}>A</div>
-              <span className={styles.userName}>Admin</span>
+              <span className={`${styles.userName} ${styles.desktopOnly}`}>Admin</span>
             </div>
           </div>
         </header>

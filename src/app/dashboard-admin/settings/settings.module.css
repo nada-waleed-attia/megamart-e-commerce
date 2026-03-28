@@ -382,6 +382,17 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .visualContent {
+    grid-template-columns: 150px 1fr;
+    gap: 1.5rem;
+  }
+
+  .socialGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
@@ -393,6 +404,10 @@
     gap: 1rem;
   }
 
+  .title {
+    font-size: 1.5rem;
+  }
+
   .saveButton {
     width: 100%;
     justify-content: center;
@@ -400,6 +415,7 @@
 
   .tabs {
     gap: 0.25rem;
+    padding-bottom: 0;
   }
 
   .tab {
@@ -411,11 +427,119 @@
     padding: 1.5rem;
   }
 
-  .formGrid {
-    grid-template-columns: 1fr;
+  .sectionTitle {
+    font-size: 1.25rem;
   }
 
-  .colorGrid {
+  .subsectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .formGrid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .visualContent {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .previewBox {
+    padding: 1.5rem;
+  }
+
+  .siteNamePreview {
+    font-size: 1.25rem;
+  }
+
+  .logoPreview {
+    width: 100%;
+    height: 100px;
+  }
+
+  .colorsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .colorPreview {
+    height: 80px;
+  }
+
+  .socialGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .socialCard {
+    padding: 1.25rem;
+  }
+
+  .socialIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .tab {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1rem;
+  }
+
+  .previewBox {
+    padding: 1.25rem;
+  }
+
+  .siteNamePreview {
+    font-size: 1.1rem;
+  }
+
+  .taglinePreview {
+    font-size: 0.8rem;
+  }
+
+  .colorPreview {
+    height: 70px;
+  }
+
+  .socialCard {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socialIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .uploadButton {
+    width: 100%;
   }
 }
