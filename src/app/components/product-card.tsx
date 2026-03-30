@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { memo } from 'react';
 import Image from 'next/image';
 import { useToast } from './toast/toast-container';
 import styles from './product-card.module.css';
@@ -15,25 +15,21 @@ interface ProductCardProps {
   discount?: number;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
-  id,
+const ProductCard = memo(function ProductCard({
   name,
   price,
   image,
   category,
   rating,
   discount
-}) => {
+}: ProductCardProps) {
   const { showToast } = useToast();
 
   const handleAddToCart = () => {
-    // Simulate adding to cart
-    console.log(`Added ${name} to cart`);
-    
-    // Show success toast
+    // Add to cart logic
     showToast(`${name} added to cart successfully!`, 'success', 1000);
     
-    // You can also add actual cart logic here
+    // TODO: Implement actual cart logic
     // const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
     // cartItems.push({ id, name, price, image, quantity: 1 });
     // localStorage.setItem('cart', JSON.stringify(cartItems));
@@ -102,6 +98,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
     </div>
   );
-};
+});
 
 export default ProductCard;

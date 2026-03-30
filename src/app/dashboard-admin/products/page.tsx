@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import styles from './products.module.css';
+import heroStyles from '../hero.module.css';
 import { MdAdd, MdInventory, MdCategory, MdLabel } from 'react-icons/md';
 
 interface Stats {
@@ -83,6 +84,15 @@ export default function ProductsOverviewPage() {
 
   return (
     <div className={styles.overviewPage}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إدارة المنتجات</h1>
+          <h2>تحكم في منتجات المتجر</h2>
+          <p>أضف، عدل، واحذف المنتجات وتحكم في المخزون والأسعار</p>
+        </div>
+      </div>
+
       {/* Header */}
       <div className={styles.header}>
         <div>

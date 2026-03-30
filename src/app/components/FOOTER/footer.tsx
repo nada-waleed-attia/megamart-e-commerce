@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import styles from './footer.module.css';
 
 const Footer = () => {
@@ -31,8 +30,9 @@ const Footer = () => {
       
       setMessage('تم الاشتراك بنجاح! شكراً لك');
       setEmail('');
-    } catch (error) {
+    } catch (err) {
       setMessage('حدث خطأ، الرجاء المحاولة مرة أخرى');
+      console.error('Newsletter subscription error:', err);
     } finally {
       setIsSubmitting(false);
     }

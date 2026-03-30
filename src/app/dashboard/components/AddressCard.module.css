@@ -1,0 +1,148 @@
+.addressCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.addressCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.defaultBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.addressHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.typeIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.addressHeader h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+}
+
+.addressHeader p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.addressBody {
+  margin-bottom: 1.25rem;
+}
+
+.phone {
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
+
+.addressText {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.addressActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.defaultBtn,
+.editBtn,
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background: white;
+}
+
+.defaultBtn {
+  color: #0891b2;
+  border-color: #0891b2;
+}
+
+.defaultBtn:hover {
+  background: #e0f2fe;
+}
+
+.editBtn {
+  color: #64748b;
+}
+
+.editBtn:hover {
+  background: #f8fafc;
+  border-color: #0891b2;
+  color: #0891b2;
+}
+
+.deleteBtn {
+  color: #ef4444;
+  border-color: #fee2e2;
+}
+
+.deleteBtn:hover {
+  background: #fee2e2;
+}
+
+@media (max-width: 767px) {
+  .addressCard {
+    padding: 1.25rem;
+  }
+
+  .defaultBadge {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .addressActions {
+    flex-direction: column;
+  }
+
+  .defaultBtn,
+  .editBtn,
+  .deleteBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

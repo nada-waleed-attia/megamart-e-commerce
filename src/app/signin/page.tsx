@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../components/auth/auth-context';
+import { Validator, ValidationRules, type ValidationRule } from '../utils/validation';
 import Image from 'next/image';
 import styles from './signin.module.css';
 
@@ -22,9 +23,10 @@ const LoginPage = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    const sanitizedValue = Validator.sanitize(value);
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: sanitizedValue
     }));
     // Clear error when user starts typing
     if (errors[name]) {
@@ -36,36 +38,32 @@ const LoginPage = () => {
   };
 
   const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
-
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-
-    if (!formData.password) {
-      newErrors.password = 'Password is required';
-    } else if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
-    }
+    const rules: Record<string, ValidationRule> = {
+      email: ValidationRules.email,
+      password: ValidationRules.password
+    };
 
     if (!isLogin) {
-      if (!formData.firstName) {
-        newErrors.firstName = 'First name is required';
-      }
-      if (!formData.lastName) {
-        newErrors.lastName = 'Last name is required';
-      }
-      if (!formData.confirmPassword) {
-        newErrors.confirmPassword = 'Please confirm your password';
-      } else if (formData.password !== formData.confirmPassword) {
-        newErrors.confirmPassword = 'Passwords do not match';
+      rules.firstName = ValidationRules.name;
+      rules.lastName = ValidationRules.name;
+      rules.confirmPassword = {
+        required: true,
+        minLength: 8,
+        maxLength: 128
+      } as ValidationRule;
+    }
+
+    const result = Validator.validateForm(formData, rules);
+    
+    // Additional check for confirm password
+    if (!isLogin && formData.password && formData.confirmPassword) {
+      if (formData.password !== formData.confirmPassword) {
+        result.errors.confirmPassword = 'Passwords do not match';
       }
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors(result.errors);
+    return result.isValid;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -88,7 +86,7 @@ const LoginPage = () => {
         router.push('/account');
       }
     } catch (error) {
-      console.error('Authentication error:', error);
+      // TODO: Add proper error logging service
       alert('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);

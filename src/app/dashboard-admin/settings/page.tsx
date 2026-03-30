@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './settings.module.css';
+import heroStyles from '../hero.module.css';
 import { SiteSettings, DEFAULT_SITE_SETTINGS } from '@/app/models/site-settings';
 import { MdUpload, MdSave } from 'react-icons/md';
 
@@ -34,6 +36,15 @@ export default function SettingsPage() {
 
   return (
     <div className={styles.container}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إعدادات المتجر</h1>
+          <h2>إعدادات عامة للمتجر</h2>
+          <p>تحكم في معلومات المتجر، طرق الدفع، والشحن</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <h1 className={styles.title}>إعدادات الواجهة العامة</h1>
         <button className={styles.saveButton} onClick={handleSave}>
@@ -122,7 +133,9 @@ export default function SettingsPage() {
               <div className={styles.visualContent}>
                 <div className={styles.logoPreview}>
                   {settings.branding.logo ? (
-                    <img src={settings.branding.logo} alt="Logo" className={styles.logoImage} />
+                    <div style={{ position: 'relative', width: '200px', height: '60px' }}>
+                      <Image src={settings.branding.logo} alt="Logo" fill style={{ objectFit: 'contain' }} />
+                    </div>
                   ) : (
                     <div className={styles.logoPlaceholder}>لا يوجد لوجو</div>
                   )}
@@ -152,7 +165,9 @@ export default function SettingsPage() {
               <div className={styles.visualContent}>
                 <div className={styles.faviconPreview}>
                   {settings.branding.favicon ? (
-                    <img src={settings.branding.favicon} alt="Favicon" className={styles.faviconImage} />
+                    <div style={{ position: 'relative', width: '32px', height: '32px' }}>
+                      <Image src={settings.branding.favicon} alt="Favicon" fill style={{ objectFit: 'contain' }} />
+                    </div>
                   ) : (
                     <div className={styles.faviconPlaceholder}>؟</div>
                   )}

@@ -1,0 +1,341 @@
+{
+  "user": {
+    "id": "user-001",
+    "name": "أحمد محمد",
+    "email": "ahmed.mohamed@example.com",
+    "phone": "+20 123 456 7890",
+    "avatar": "",
+    "birthDate": "1990-05-15",
+    "gender": "male",
+    "joinDate": "2023-01-15",
+    "totalOrders": 24,
+    "totalSpent": 15250
+  },
+  
+  "stats": [
+    {
+      "id": "stat-1",
+      "icon": "MdShoppingBag",
+      "label": "إجمالي الطلبات",
+      "value": "24",
+      "color": "#10b981"
+    },
+    {
+      "id": "stat-2",
+      "icon": "MdLocalShipping",
+      "label": "قيد التنفيذ",
+      "value": "3",
+      "color": "#6366f1"
+    },
+    {
+      "id": "stat-3",
+      "icon": "MdFavorite",
+      "label": "المفضلة",
+      "value": "12",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "stat-4",
+      "icon": "MdLocationOn",
+      "label": "العناوين",
+      "value": "2",
+      "color": "#ef4444"
+    }
+  ],
+
+  "orders": [
+    {
+      "id": "1",
+      "orderNumber": "ORD-2024-001",
+      "date": "2024-03-20",
+      "status": "delivered",
+      "statusLabel": "تم التوصيل",
+      "total": 1250,
+      "items": 3,
+      "paymentMethod": "بطاقة ائتمان",
+      "shippingAddress": {
+        "name": "أحمد محمد",
+        "phone": "+20 123 456 7890",
+        "address": "شارع النيل، المعادي، القاهرة",
+        "city": "القاهرة",
+        "area": "المعادي"
+      },
+      "products": [
+        {
+          "id": "p1",
+          "name": "هاتف Samsung Galaxy S24",
+          "image": "/images/samsung-products.jpg",
+          "price": 500,
+          "quantity": 1
+        },
+        {
+          "id": "p2",
+          "name": "سماعات Sony WH-1000XM5",
+          "image": "/images/sony-products.jpg",
+          "price": 350,
+          "quantity": 1
+        },
+        {
+          "id": "p3",
+          "name": "شاحن سريع",
+          "image": "/images/samsung-products.jpg",
+          "price": 400,
+          "quantity": 1
+        }
+      ],
+      "timeline": [
+        {
+          "status": "تم الطلب",
+          "date": "2024-03-20 10:30",
+          "completed": true
+        },
+        {
+          "status": "تم التأكيد",
+          "date": "2024-03-20 11:00",
+          "completed": true
+        },
+        {
+          "status": "جاري التجهيز",
+          "date": "2024-03-20 14:00",
+          "completed": true
+        },
+        {
+          "status": "تم الشحن",
+          "date": "2024-03-21 09:00",
+          "completed": true
+        },
+        {
+          "status": "تم التوصيل",
+          "date": "2024-03-22 15:30",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "orderNumber": "ORD-2024-002",
+      "date": "2024-03-22",
+      "status": "shipped",
+      "statusLabel": "تم الشحن",
+      "total": 850,
+      "items": 2,
+      "paymentMethod": "الدفع عند الاستلام",
+      "shippingAddress": {
+        "name": "أحمد محمد",
+        "phone": "+20 123 456 7890",
+        "address": "شارع النيل، المعادي، القاهرة",
+        "city": "القاهرة",
+        "area": "المعادي"
+      },
+      "products": [
+        {
+          "id": "p4",
+          "name": "حذاء Nike Air Max",
+          "image": "/images/nike-products.jpg",
+          "price": 180,
+          "quantity": 2
+        },
+        {
+          "id": "p5",
+          "name": "تيشيرت Adidas",
+          "image": "/images/adidas-products.jpg",
+          "price": 490,
+          "quantity": 1
+        }
+      ],
+      "timeline": [
+        {
+          "status": "تم الطلب",
+          "date": "2024-03-22 12:00",
+          "completed": true
+        },
+        {
+          "status": "تم التأكيد",
+          "date": "2024-03-22 12:30",
+          "completed": true
+        },
+        {
+          "status": "جاري التجهيز",
+          "date": "2024-03-22 16:00",
+          "completed": true
+        },
+        {
+          "status": "تم الشحن",
+          "date": "2024-03-23 10:00",
+          "completed": true
+        },
+        {
+          "status": "تم التوصيل",
+          "date": "",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "orderNumber": "ORD-2024-003",
+      "date": "2024-03-25",
+      "status": "processing",
+      "statusLabel": "قيد التجهيز",
+      "total": 2100,
+      "items": 5,
+      "paymentMethod": "بطاقة ائتمان",
+      "shippingAddress": {
+        "name": "أحمد محمد",
+        "phone": "+20 123 456 7890",
+        "address": "شارع التحرير، وسط البلد، القاهرة",
+        "city": "القاهرة",
+        "area": "وسط البلد"
+      },
+      "products": [
+        {
+          "id": "p6",
+          "name": "لابتوب LG Gram",
+          "image": "/images/lg-products.jpg",
+          "price": 1500,
+          "quantity": 1
+        },
+        {
+          "id": "p7",
+          "name": "ماوس لاسلكي",
+          "image": "/images/lg-products.jpg",
+          "price": 150,
+          "quantity": 2
+        },
+        {
+          "id": "p8",
+          "name": "كيبورد ميكانيكي",
+          "image": "/images/lg-products.jpg",
+          "price": 300,
+          "quantity": 1
+        }
+      ],
+      "timeline": [
+        {
+          "status": "تم الطلب",
+          "date": "2024-03-25 09:15",
+          "completed": true
+        },
+        {
+          "status": "تم التأكيد",
+          "date": "2024-03-25 09:45",
+          "completed": true
+        },
+        {
+          "status": "جاري التجهيز",
+          "date": "2024-03-25 14:00",
+          "completed": true
+        },
+        {
+          "status": "تم الشحن",
+          "date": "",
+          "completed": false
+        },
+        {
+          "status": "تم التوصيل",
+          "date": "",
+          "completed": false
+        }
+      ]
+    }
+  ],
+
+  "addresses": [
+    {
+      "id": "addr-1",
+      "type": "home",
+      "fullName": "أحمد محمد",
+      "phone": "01234567890",
+      "city": "القاهرة",
+      "area": "المعادي",
+      "street": "شارع النيل",
+      "building": "15",
+      "floor": "3",
+      "apartment": "5",
+      "landmark": "بجوار مسجد المصطفى",
+      "isDefault": true
+    },
+    {
+      "id": "addr-2",
+      "type": "work",
+      "fullName": "أحمد محمد",
+      "phone": "01234567890",
+      "city": "القاهرة",
+      "area": "وسط البلد",
+      "street": "شارع التحرير",
+      "building": "25",
+      "floor": "7",
+      "apartment": "12",
+      "landmark": "أمام البنك الأهلي",
+      "isDefault": false
+    }
+  ],
+
+  "wishlist": [
+    {
+      "id": "wish-1",
+      "productId": "101",
+      "name": "هاتف Samsung Galaxy S24",
+      "image": "/images/samsung-products.jpg",
+      "price": 500,
+      "originalPrice": 600,
+      "inStock": true,
+      "discount": 17,
+      "category": "إلكترونيات"
+    },
+    {
+      "id": "wish-2",
+      "productId": "102",
+      "name": "سماعات Sony WH-1000XM5",
+      "image": "/images/sony-products.jpg",
+      "price": 350,
+      "originalPrice": 350,
+      "inStock": true,
+      "discount": 0,
+      "category": "إلكترونيات"
+    },
+    {
+      "id": "wish-3",
+      "productId": "103",
+      "name": "ساعة Apple Watch Series 9",
+      "image": "/images/apple-products.jpg",
+      "price": 450,
+      "originalPrice": 500,
+      "inStock": false,
+      "discount": 10,
+      "category": "إلكترونيات"
+    },
+    {
+      "id": "wish-4",
+      "productId": "104",
+      "name": "حذاء Nike Air Max",
+      "image": "/images/nike-products.jpg",
+      "price": 180,
+      "originalPrice": 200,
+      "inStock": true,
+      "discount": 10,
+      "category": "ملابس"
+    },
+    {
+      "id": "wish-5",
+      "productId": "105",
+      "name": "تيشيرت Adidas",
+      "image": "/images/adidas-products.jpg",
+      "price": 120,
+      "originalPrice": 150,
+      "inStock": true,
+      "discount": 20,
+      "category": "ملابس"
+    }
+  ],
+
+  "settings": {
+    "notifications": {
+      "email": true,
+      "orderUpdates": true,
+      "promotions": false
+    },
+    "language": "ar",
+    "currency": "EGP"
+  }
+}

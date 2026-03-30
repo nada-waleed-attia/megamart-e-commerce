@@ -35,7 +35,7 @@ const CartPage = () => {
           {cartItems.length === 0 ? (
             <div className={styles.emptyCart}>
               <h2>Your cart is empty</h2>
-              <p>Looks like you haven't added anything to your cart yet.</p>
+              <p>Looks like you haven&apos;t added anything to your cart yet.</p>
               <button 
                 onClick={() => router.push('/')}
                 className={styles.continueShoppingBtn}

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import styles from './customer-details.module.css';
 
 interface Customer {
@@ -401,7 +402,7 @@ export default function CustomerDetailsPage({ params }: { params: Promise<{ id: 
                 <div className={styles.activityIcon}>🔍</div>
                 <div className={styles.activityContent}>
                   <h4>بحث عن</h4>
-                  <p>"سماعات بلوتوث"</p>
+                  <p>&quot;سماعات بلوتوث&quot;</p>
                   <span className={styles.activityTime}>منذ أسبوعين</span>
                 </div>
               </div>
@@ -458,7 +459,9 @@ export default function CustomerDetailsPage({ params }: { params: Promise<{ id: 
           <div className={styles.favorites}>
             <div className={styles.favoritesGrid}>
               <div className={styles.favoriteCard}>
-                <img src="/images/samsung-products.jpg" alt="Product" className={styles.favoriteImage} />
+                <div className={styles.favoriteImageWrapper}>
+                  <Image src="/images/samsung-products.jpg" alt="Product" fill style={{ objectFit: 'cover' }} />
+                </div>
                 <div className={styles.favoriteInfo}>
                   <h4>سماعات سامسونج Galaxy Buds</h4>
                   <p className={styles.favoritePrice}>2,500 ج.م</p>
@@ -467,7 +470,9 @@ export default function CustomerDetailsPage({ params }: { params: Promise<{ id: 
                 <button className={styles.removeFavoriteBtn}>🗑️</button>
               </div>
               <div className={styles.favoriteCard}>
-                <img src="/images/apple-products.jpg" alt="Product" className={styles.favoriteImage} />
+                <div className={styles.favoriteImageWrapper}>
+                  <Image src="/images/apple-products.jpg" alt="Product" fill style={{ objectFit: 'cover' }} />
+                </div>
                 <div className={styles.favoriteInfo}>
                   <h4>ساعة Apple Watch Series 9</h4>
                   <p className={styles.favoritePrice}>18,000 ج.م</p>
@@ -476,7 +481,9 @@ export default function CustomerDetailsPage({ params }: { params: Promise<{ id: 
                 <button className={styles.removeFavoriteBtn}>🗑️</button>
               </div>
               <div className={styles.favoriteCard}>
-                <img src="/images/lg-products.jpg" alt="Product" className={styles.favoriteImage} />
+                <div className={styles.favoriteImageWrapper}>
+                  <Image src="/images/lg-products.jpg" alt="Product" fill style={{ objectFit: 'cover' }} />
+                </div>
                 <div className={styles.favoriteInfo}>
                   <h4>تلفزيون LG OLED 55 بوصة</h4>
                   <p className={styles.favoritePrice}>35,000 ج.م</p>

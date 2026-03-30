@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { DataTable, Column } from '../components/DataTable/DataTable';
 import styles from './email-list.module.css';
+import heroStyles from '../hero.module.css';
 
 interface Subscriber {
   id: number;
@@ -31,7 +32,7 @@ export default function EmailListPage() {
       try {
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Mock data
+        // Mock data - 15 subscribers for 3 pages (5 per page)
         const mockSubscribers: Subscriber[] = [
           {
             id: 1,
@@ -70,6 +71,86 @@ export default function EmailListPage() {
             email: 'sara@example.com',
             status: 'active',
             subscriptionDate: '2024-02-05',
+            source: 'popup',
+          },
+          {
+            id: 6,
+            name: 'علي حسين',
+            email: 'ali@example.com',
+            status: 'active',
+            subscriptionDate: '2024-02-10',
+            source: 'footer',
+          },
+          {
+            id: 7,
+            name: 'نور الدين',
+            email: 'nour@example.com',
+            status: 'unsubscribed',
+            subscriptionDate: '2024-02-12',
+            source: 'popup',
+          },
+          {
+            id: 8,
+            name: 'ليلى محمود',
+            email: 'layla@example.com',
+            status: 'active',
+            subscriptionDate: '2024-02-15',
+            source: 'checkout',
+          },
+          {
+            id: 9,
+            name: 'خالد عبدالله',
+            email: 'khaled@example.com',
+            status: 'active',
+            subscriptionDate: '2024-02-18',
+            source: 'footer',
+          },
+          {
+            id: 10,
+            name: 'مريم سعيد',
+            email: 'mariam@example.com',
+            status: 'active',
+            subscriptionDate: '2024-02-20',
+            source: 'popup',
+          },
+          {
+            id: 11,
+            name: 'يوسف إبراهيم',
+            email: 'youssef@example.com',
+            status: 'active',
+            subscriptionDate: '2024-02-22',
+            source: 'footer',
+          },
+          {
+            id: 12,
+            name: 'هدى عمر',
+            email: 'huda@example.com',
+            status: 'unsubscribed',
+            subscriptionDate: '2024-02-25',
+            source: 'checkout',
+          },
+          {
+            id: 13,
+            name: 'عمر فاروق',
+            email: 'omar@example.com',
+            status: 'active',
+            subscriptionDate: '2024-03-01',
+            source: 'popup',
+          },
+          {
+            id: 14,
+            name: 'ياسمين خالد',
+            email: 'yasmin@example.com',
+            status: 'active',
+            subscriptionDate: '2024-03-03',
+            source: 'footer',
+          },
+          {
+            id: 15,
+            name: 'حسام الدين',
+            email: 'hossam@example.com',
+            status: 'active',
+            subscriptionDate: '2024-03-05',
             source: 'popup',
           },
         ];
@@ -252,14 +333,14 @@ export default function EmailListPage() {
       label: 'المصدر',
       render: (value) => {
         if (!value) return '-';
-        const sourceLabels = {
+        const sourceLabels: Record<string, string> = {
           footer: 'التذييل',
           popup: 'نافذة منبثقة',
           checkout: 'صفحة الدفع',
         };
         return (
           <span className={styles.sourceBadge}>
-            {sourceLabels[value]}
+            {sourceLabels[value as string] || value}
           </span>
         );
       },
@@ -297,6 +378,15 @@ export default function EmailListPage() {
 
   return (
     <div className={styles.emailListPage}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>قائمة البريد الإلكتروني</h1>
+          <h2>إدارة المشتركين</h2>
+          <p>عرض وإدارة قائمة المشتركين في النشرة البريدية</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <div>
           <h2 className={styles.title}>إدارة القائمة البريدية</h2>
@@ -411,6 +501,7 @@ export default function EmailListPage() {
         isLoading={isLoading}
         emptyMessage="لا توجد مشتركين"
         onRowClick={handleRowClick}
+        itemsPerPage={5}
       />
 
       {/* Edit Modal */}

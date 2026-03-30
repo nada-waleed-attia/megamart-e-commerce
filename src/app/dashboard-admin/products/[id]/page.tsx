@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './product-details.module.css';
 
 interface Product {
@@ -159,7 +160,9 @@ export default function ProductDetailsPage() {
           <div className={styles.imagesSection}>
             <div className={styles.mainImage}>
               {product.images.length > 0 ? (
-                <img src={product.images[selectedImage]} alt={product.name} />
+                <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                  <Image src={product.images[selectedImage]} alt={product.name} fill style={{ objectFit: 'contain' }} />
+                </div>
               ) : (
                 <div className={styles.noImage}>📦</div>
               )}
@@ -172,7 +175,9 @@ export default function ProductDetailsPage() {
                     className={`${styles.thumbnail} ${selectedImage === index ? styles.activeThumbnail : ''}`}
                     onClick={() => setSelectedImage(index)}
                   >
-                    <img src={img} alt={`${product.name} ${index + 1}`} />
+                    <div style={{ position: 'relative', width: '100%', height: '80px' }}>
+                      <Image src={img} alt={`${product.name} ${index + 1}`} fill style={{ objectFit: 'cover' }} />
+                    </div>
                   </div>
                 ))}
               </div>

@@ -7,6 +7,7 @@ import { Alerts } from '../components/Alerts/Alerts';
 import { RecentActivity } from '../components/RecentActivity/RecentActivity';
 import { SkeletonCard } from '../components/Skeleton/Skeleton';
 import styles from './dashboard.module.css';
+import heroStyles from '../hero.module.css';
 
 interface DashboardMetrics {
   totalCustomers: number;
@@ -146,6 +147,15 @@ export default function DashboardPage() {
 
   return (
     <div className={styles.dashboard}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>لوحة التحكم الإدارية</h1>
+          <h2>نظرة شاملة على المتجر</h2>
+          <p>تابع المبيعات، الطلبات، المنتجات، والعملاء من مكان واحد</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <h2 className={styles.title}>نظرة عامة</h2>
         <p className={styles.subtitle}>مرحباً بك في لوحة التحكم - إليك ملخص سريع لحالة المتجر</p>

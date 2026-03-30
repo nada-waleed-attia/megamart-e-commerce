@@ -16,7 +16,7 @@ export const useProducts = () => {
         setError(null);
       } catch (err) {
         setError('Failed to fetch products');
-        console.error(err);
+        // TODO: Add proper error logging service
       } finally {
         setLoading(false);
       }
@@ -42,7 +42,7 @@ export const useProduct = (id: number) => {
         setError(null);
       } catch (err) {
         setError('Failed to fetch product');
-        console.error(err);
+        // TODO: Add proper error logging service
       } finally {
         setLoading(false);
       }

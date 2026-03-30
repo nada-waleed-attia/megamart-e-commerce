@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './users.module.css';
+import heroStyles from '../hero.module.css';
 import { 
   AdminUser, 
   UserRole,
@@ -104,6 +105,15 @@ export default function UsersPage() {
 
   return (
     <div className={styles.container}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إدارة المستخدمين</h1>
+          <h2>إدارة مستخدمي لوحة التحكم</h2>
+          <p>أضف وعدل صلاحيات المستخدمين والمديرين</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <div>
           <h1 className={styles.title}>إدارة المستخدمين</h1>

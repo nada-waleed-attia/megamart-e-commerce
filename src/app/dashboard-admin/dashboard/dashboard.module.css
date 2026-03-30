@@ -25,6 +25,8 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Charts Section */
@@ -32,6 +34,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .chartCard {
@@ -97,6 +101,8 @@
 @media (max-width: 768px) {
   .dashboard {
     max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .header {
@@ -115,15 +121,19 @@
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    width: 100%;
   }
 
   .chartsSection {
     grid-template-columns: 1fr;
     gap: 1rem;
+    width: 100%;
   }
 
   .chartCard {
     padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .chartTitle {

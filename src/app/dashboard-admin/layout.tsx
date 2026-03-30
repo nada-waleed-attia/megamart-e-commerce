@@ -36,7 +36,10 @@ export default function AdminLayout({
 
   // Close mobile sidebar when route changes
   useEffect(() => {
-    setIsMobileSidebarOpen(false);
+    const timer = setTimeout(() => {
+      setIsMobileSidebarOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   const menuItems: MenuItem[] = [
@@ -167,6 +170,22 @@ export default function AdminLayout({
             </div>
           ))}
         </nav>
+
+        {/* Logout Button */}
+        <div className={styles.sidebarFooter}>
+          <button
+            className={styles.logoutBtn}
+            onClick={() => {
+              if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+                // TODO: Add logout logic
+                window.location.href = '/';
+              }
+            }}
+          >
+            <span className={styles.navIcon}>🚪</span>
+            {!isSidebarCollapsed && <span className={styles.navLabel}>تسجيل الخروج</span>}
+          </button>
+        </div>
       </aside>
 
       {/* Main Content */}

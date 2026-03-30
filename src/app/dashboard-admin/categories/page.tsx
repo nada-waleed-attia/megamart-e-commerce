@@ -3,8 +3,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { DataTable, Column } from '../components/DataTable/DataTable';
 import styles from './categories.module.css';
+import heroStyles from '../hero.module.css';
 
 interface Category {
   id: number;
@@ -178,7 +180,7 @@ export default function CategoriesPage() {
       label: 'الصورة',
       render: (_, row) => (
         <div className={styles.categoryImage}>
-          <img src={row.image} alt={row.name} />
+          <Image src={row.image} alt={row.name} width={50} height={50} style={{ objectFit: 'cover' }} />
         </div>
       ),
     },
@@ -274,6 +276,15 @@ export default function CategoriesPage() {
 
   return (
     <div className={styles.categoriesPage}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إدارة الفئات</h1>
+          <h2>تنظيم فئات المنتجات</h2>
+          <p>أضف وعدل الفئات الرئيسية والفرعية لتنظيم المتجر</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <div>
           <h2 className={styles.title}>إدارة الأقسام الرئيسية</h2>

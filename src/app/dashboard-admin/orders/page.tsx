@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './orders.module.css';
+import heroStyles from '../hero.module.css';
 import { 
   Order, 
   OrderStatus, 
@@ -60,6 +61,15 @@ export default function OrdersPage() {
 
   return (
     <div className={styles.container}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إدارة الطلبات</h1>
+          <h2>متابعة جميع الطلبات</h2>
+          <p>راجع الطلبات الجديدة، حدث الحالات، وتابع عمليات الشحن</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <h1 className={styles.title}>إدارة الطلبات</h1>
         <button className={styles.exportButton} onClick={handleExport}>

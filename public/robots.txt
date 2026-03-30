@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://my-company-site.com/sitemap.xml
+
+# Block unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /dashboard-admin/
+Disallow: /*.json$
+
+# Allow important paths
+Allow: /products/
+Allow: /categories/
+Allow: /brands/
+Allow: /cart/
+Allow: /checkout/
+
+# Crawl delay (optional)
+Crawl-delay: 1

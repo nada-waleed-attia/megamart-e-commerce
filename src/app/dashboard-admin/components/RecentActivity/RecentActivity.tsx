@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { SkeletonActivityCard } from '../Skeleton/Skeleton';
 import { EmptyState } from '../EmptyState/EmptyState';
 import styles from './RecentActivity.module.css';
@@ -85,7 +86,7 @@ export function RecentActivity({ isLoading = false }: RecentActivityProps) {
       <div className={styles.activityCard}>
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>👥 آخر العملاء المسجلين</h3>
-          <a href="/dashboard-admin/customers" className={styles.viewAll}>عرض الكل</a>
+          <Link href="/dashboard-admin/customers" className={styles.viewAll}>عرض الكل</Link>
         </div>
         <div className={styles.cardBody}>
           {recentCustomers.length === 0 ? (
@@ -115,7 +116,7 @@ export function RecentActivity({ isLoading = false }: RecentActivityProps) {
       <div className={styles.activityCard}>
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>📦 آخر المنتجات المضافة</h3>
-          <a href="/dashboard-admin/products" className={styles.viewAll}>عرض الكل</a>
+          <Link href="/dashboard-admin/products" className={styles.viewAll}>عرض الكل</Link>
         </div>
         <div className={styles.cardBody}>
           {recentProducts.length === 0 ? (
@@ -147,7 +148,7 @@ export function RecentActivity({ isLoading = false }: RecentActivityProps) {
       <div className={styles.activityCard}>
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>🛒 آخر الطلبات</h3>
-          <a href="/dashboard-admin/orders" className={styles.viewAll}>عرض الكل</a>
+          <Link href="/dashboard-admin/orders" className={styles.viewAll}>عرض الكل</Link>
         </div>
         <div className={styles.cardBody}>
           {recentOrders.length === 0 ? (

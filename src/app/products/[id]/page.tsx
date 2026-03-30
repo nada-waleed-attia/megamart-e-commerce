@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -13,7 +13,7 @@ import Footer from '../../components/FOOTER/footer';
 import styles from './page.module.css';
 
 // Import slides data directly
-const slidesData = require('../../components/DATA/slides.json');
+import slidesData from '../../components/DATA/slides.json';
 
 const ProductDetailPage = () => {
   const params = useParams();
@@ -137,7 +137,7 @@ const ProductDetailPage = () => {
             <div className={styles.features}>
               <h3>Key Features</h3>
               <ul>
-                {product.features?.map((feature, index) => (
+                {product.features?.map((feature: string, index: number) => (
                   <li key={index}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -154,7 +154,7 @@ const ProductDetailPage = () => {
                 {Object.entries(product.specifications || {}).map(([key, value]) => (
                   <div key={key} className={styles.specItem}>
                     <span className={styles.specLabel}>{key}</span>
-                    <span className={styles.specValue}>{value}</span>
+                    <span className={styles.specValue}>{String(value)}</span>
                   </div>
                 ))}
               </div>

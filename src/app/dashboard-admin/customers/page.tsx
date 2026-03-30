@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { DataTable, Column } from '../components/DataTable/DataTable';
 import styles from './customers.module.css';
+import heroStyles from '../hero.module.css';
 
 interface Customer {
   id: number;
@@ -341,6 +342,15 @@ export default function CustomersPage() {
 
   return (
     <div className={styles.customersPage}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إدارة العملاء</h1>
+          <h2>قاعدة بيانات العملاء</h2>
+          <p>عرض وإدارة معلومات العملاء وسجل مشترياتهم</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <div>
           <h2 className={styles.title}>إدارة العملاء</h2>

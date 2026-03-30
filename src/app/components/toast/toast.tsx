@@ -21,11 +21,13 @@ const Toast: React.FC<ToastProps> = ({
   useEffect(() => {
     console.log(`Toast mounted with duration: ${duration}ms`);
     
-    // Trigger entrance animation
-    setIsVisible(true);
+    // Trigger entrance animation asynchronously to avoid cascading renders
+    const entranceTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 0);
 
     // Auto-dismiss after duration
-    const timer = setTimeout(() => {
+    const dismissTimer = setTimeout(() => {
       console.log('Timer triggered - hiding toast');
       setIsVisible(false);
       // Wait for exit animation before calling onClose
@@ -37,7 +39,8 @@ const Toast: React.FC<ToastProps> = ({
 
     return () => {
       console.log('Toast unmounted or effect cleaned up');
-      clearTimeout(timer);
+      clearTimeout(entranceTimer);
+      clearTimeout(dismissTimer);
     };
   }, [duration, onClose]);
 

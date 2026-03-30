@@ -87,7 +87,7 @@ const BrandPage = () => {
             <h3>Brand Description</h3>
             <p>
               Discover the latest {brand.name} products with amazing discounts. 
-              Premium quality electronics from one of the world's leading brands. 
+              Premium quality electronics from one of the world&apos;s leading brands. 
               Get authentic products with official warranty.
             </p>
           </div>

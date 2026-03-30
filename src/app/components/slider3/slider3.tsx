@@ -1,13 +1,13 @@
 "use client";
 
-import React from 'react';
+import React, { memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './slider3.module.css';
 import slidesData from '../DATA/slides.json';
 import { Category } from '../DATA/types';
 
-const CategoriesSection = () => {
+const CategoriesSection = memo(function CategoriesSection() {
   const categories: Category[] = slidesData.categories;
 
   return (
@@ -19,16 +19,16 @@ const CategoriesSection = () => {
             Shop From <span className={styles.highlight}>Top Categories</span>
           </h2>
           <Link 
-          href="/view-all/categories"
-          className={styles.viewAll}
-        >
-          View All <span>→</span>
-        </Link>
+            href="/categories"
+            className={styles.viewAll}
+          >
+            View All <span>→</span>
+          </Link>
         </div>
 
         <div className={styles.categoriesGrid}>
           {categories.map((category) => (
-            <a 
+            <Link 
               key={category.id} 
               href={`/categories/${category.id}`}
               className={styles.categoryCard}
@@ -43,12 +43,12 @@ const CategoriesSection = () => {
                 />
               </div>
               <p className={styles.categoryName}>{category.name}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
     </div>
   );
-};
+});
 
 export default CategoriesSection;

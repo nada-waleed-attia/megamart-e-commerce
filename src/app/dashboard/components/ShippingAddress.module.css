@@ -1,0 +1,32 @@
+.address {
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-right: 3px solid #0891b2;
+}
+
+.address p {
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.6;
+}
+
+.address p:last-child {
+  margin-bottom: 0;
+}
+
+.address strong {
+  font-weight: 600;
+  color: #0891b2;
+}
+
+@media (max-width: 767px) {
+  .address {
+    padding: 1rem;
+  }
+
+  .address p {
+    font-size: 0.875rem;
+  }
+}

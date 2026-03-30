@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MdEdit, MdDelete, MdVisibility } from 'react-icons/md';
 import styles from './sub-categories.module.css';
+import heroStyles from '../hero.module.css';
 
 interface SubCategory {
   id: number;
@@ -26,7 +27,7 @@ interface Category {
   name: string;
 }
 
-export default function SubCategoriesPage() {
+function SubCategoriesContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [subCategories, setSubCategories] = useState<SubCategory[]>([]);
@@ -259,6 +260,15 @@ export default function SubCategoriesPage() {
 
   return (
     <div className={styles.subCategoriesPage}>
+      {/* Hero Section */}
+      <div className={heroStyles.heroSection}>
+        <div className={heroStyles.heroContent}>
+          <h1>إدارة الفئات الفرعية</h1>
+          <h2>تنظيم الفئات الفرعية</h2>
+          <p>أضف وعدل الفئات الفرعية لتنظيم المنتجات بشكل أفضل</p>
+        </div>
+      </div>
+
       <div className={styles.header}>
         <div>
           <h2 className={styles.title}>إدارة الأقسام الفرعية</h2>
@@ -553,5 +563,29 @@ export default function SubCategoriesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+
+export default function SubCategoriesPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ 
+            width: '50px', 
+            height: '50px', 
+            border: '4px solid #e2e8f0', 
+            borderTopColor: '#3b82f6', 
+            borderRadius: '50%', 
+            animation: 'spin 1s linear infinite',
+            margin: '0 auto 1rem'
+          }}></div>
+          <p>جاري التحميل...</p>
+        </div>
+      </div>
+    }>
+      <SubCategoriesContent />
+    </Suspense>
   );
 }

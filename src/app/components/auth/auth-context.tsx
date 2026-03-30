@@ -9,11 +9,18 @@ interface User {
   name?: string;
 }
 
+interface RegisterData {
+  email: string;
+  password: string;
+  firstName?: string;
+  lastName?: string;
+}
+
 interface AuthContextType {
   user: User | null;
   isLoggedIn: boolean;
   login: (email: string, password: string) => Promise<void>;
-  register: (userData: any) => Promise<void>;
+  register: (userData: RegisterData) => Promise<void>;
   logout: () => void;
   loading: boolean;
 }
@@ -66,14 +73,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
-  const register = async (userData: any) => {
+  const register = async (userData: RegisterData) => {
     setLoading(true);
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // In a real app, you'd send this to your backend
-      console.log('Registering user:', userData);
+      // TODO: Replace with actual API call
       
     } catch (error) {
       throw error;

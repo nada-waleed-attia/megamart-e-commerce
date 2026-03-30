@@ -13,17 +13,6 @@ const BrandsSlider = () => {
 
   const brands: Brand[] = slidesData.brands;
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (sliderRef.current) {
-      const cardWidth = 400;
-      const scrollAmount = cardWidth;
-      sliderRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
     if (sliderRef.current) {

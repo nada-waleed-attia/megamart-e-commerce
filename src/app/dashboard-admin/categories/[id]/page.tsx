@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MdArrowBack, MdEdit, MdDelete } from 'react-icons/md';
 import styles from './category-details.module.css';
 
@@ -214,7 +215,7 @@ export default function CategoryDetailsPage({ params }: { params: Promise<{ id: 
       {/* Category Card */}
       <div className={styles.categoryCard}>
         <div className={styles.categoryImage}>
-          <img src={category.image} alt={category.name} />
+          <Image src={category.image} alt={category.name} fill style={{ objectFit: 'cover' }} />
         </div>
         <div className={styles.categoryInfo}>
           <div className={styles.categoryHeader}>
@@ -313,7 +314,7 @@ export default function CategoryDetailsPage({ params }: { params: Promise<{ id: 
               {subCategories.map(subCat => (
                 <div key={subCat.id} className={styles.subCategoryCard}>
                   <div className={styles.subCategoryImage}>
-                    <img src={subCat.image} alt={subCat.name} />
+                    <Image src={subCat.image} alt={subCat.name} fill style={{ objectFit: 'cover' }} />
                     <span className={`${styles.badge} ${subCat.isActive ? styles.active : styles.inactive}`}>
                       {subCat.isActive ? '✓' : '⏸'}
                     </span>
@@ -374,7 +375,7 @@ export default function CategoryDetailsPage({ params }: { params: Promise<{ id: 
               {filteredProducts.map(product => (
                 <div key={product.id} className={styles.productCard}>
                   <div className={styles.productImage}>
-                    <img src={product.image} alt={product.name} />
+                    <Image src={product.image} alt={product.name} fill style={{ objectFit: 'cover' }} />
                     <span className={`${styles.badge} ${product.isActive ? styles.active : styles.inactive}`}>
                       {product.isActive ? '✓' : '⏸'}
                     </span>

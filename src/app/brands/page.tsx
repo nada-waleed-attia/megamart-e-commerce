@@ -19,7 +19,7 @@ interface Brand {
 
 const BrandsPage = () => {
   const { showToast } = useToast();
-  const [brands, setBrands] = useState<Brand[]>([
+  const [brands] = useState<Brand[]>([
     {
       id: 1,
       name: "Apple",

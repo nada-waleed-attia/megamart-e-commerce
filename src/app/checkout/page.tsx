@@ -32,7 +32,28 @@ const CheckoutPage = () => {
   const [shippingMethod, setShippingMethod] = useState('standard');
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [orderDetails, setOrderDetails] = useState<any>(null);
+  const [orderDetails, setOrderDetails] = useState<{
+    customer: {
+      email: string;
+      firstName: string;
+      lastName: string;
+      address: string;
+      apartment: string;
+      city: string;
+      postalCode: string;
+      phone: string;
+    };
+    payment: {
+      method: string;
+      cardDetails: {
+        number: string;
+        name: string;
+        expiry: string;
+      } | null;
+    };
+    shipping: string;
+    total: number;
+  } | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -405,7 +426,7 @@ const CheckoutPage = () => {
                   <ul>
                     <li>Have the exact amount ready</li>
                     <li>Delivery time: 5-7 business days</li>
-                    <li>You'll receive a confirmation call before delivery</li>
+                    <li>You&apos;ll receive a confirmation call before delivery</li>
                   </ul>
                 </div>
               )}

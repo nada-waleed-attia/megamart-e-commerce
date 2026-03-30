@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -35,7 +35,7 @@ interface SubCategory {
   categoryId: number;
 }
 
-export default function AllProductsPage() {
+function AllProductsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
@@ -610,5 +610,29 @@ export default function AllProductsPage() {
         onRowClick={(row) => router.push(`/dashboard-admin/products/${row.id}`)}
       />
     </div>
+  );
+}
+
+
+export default function AllProductsPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ 
+            width: '50px', 
+            height: '50px', 
+            border: '4px solid #e2e8f0', 
+            borderTopColor: '#3b82f6', 
+            borderRadius: '50%', 
+            animation: 'spin 1s linear infinite',
+            margin: '0 auto 1rem'
+          }}></div>
+          <p>جاري التحميل...</p>
+        </div>
+      </div>
+    }>
+      <AllProductsContent />
+    </Suspense>
   );
 }

@@ -21,10 +21,13 @@ export default function PageEditorPage() {
 
   useEffect(() => {
     if (pageId) {
-      const page = MOCK_STATIC_PAGES.find(p => p.id === pageId);
-      if (page) {
-        setFormData(page);
-      }
+      const timer = setTimeout(() => {
+        const page = MOCK_STATIC_PAGES.find(p => p.id === pageId);
+        if (page) {
+          setFormData(page);
+        }
+      }, 0);
+      return () => clearTimeout(timer);
     }
   }, [pageId]);
 

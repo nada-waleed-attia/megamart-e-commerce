@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef } from 'react';
+import React, { useRef, memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './slider2.module.css';
 import slidesData from '../DATA/slides.json';
 import { Product } from '../DATA/types';
 
-const ProductSlider = () => {
+const ProductSlider = memo(function ProductSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const products: Product[] = slidesData.products;
@@ -87,6 +87,6 @@ const ProductSlider = () => {
       </div>
     </div>
   );
-};
+});
 
 export default ProductSlider;

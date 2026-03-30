@@ -1,0 +1,46 @@
+.summary {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.summaryRow:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.summaryTotal {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  border-top: 2px solid #0891b2 !important;
+}
+
+.paid {
+  color: #10b981;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .summary {
+    padding: 1.25rem;
+  }
+
+  .summaryRow {
+    font-size: 0.875rem;
+  }
+
+  .summaryTotal {
+    font-size: 1rem;
+  }
+}

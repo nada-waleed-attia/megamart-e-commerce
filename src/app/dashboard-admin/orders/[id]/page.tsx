@@ -25,12 +25,15 @@ export default function OrderDetailsPage() {
 
   useEffect(() => {
     // جلب بيانات الطلب
-    const foundOrder = MOCK_ORDERS.find(o => o.id === orderId);
-    if (foundOrder) {
-      setOrder(foundOrder);
-      setEditedStatus(foundOrder.status);
-      setNotes(foundOrder.notes || '');
-    }
+    const timer = setTimeout(() => {
+      const foundOrder = MOCK_ORDERS.find(o => o.id === orderId);
+      if (foundOrder) {
+        setOrder(foundOrder);
+        setEditedStatus(foundOrder.status);
+        setNotes(foundOrder.notes || '');
+      }
+    }, 0);
+    return () => clearTimeout(timer);
   }, [orderId]);
 
   const handleSave = () => {

@@ -1,0 +1,11 @@
+{
+  "cache": {
+    "images": {
+      "maxAge": 31536000,
+      "staleWhileRevalidate": 86400
+    },
+    "static": {
+      "maxAge": 31536000
+    }
+  }
+}

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './add-product.module.css';
 
 interface Category {
@@ -540,7 +541,9 @@ export default function AddProductPage() {
                 <div className={styles.imagesList}>
                   {formData.images.map((img, index) => (
                     <div key={index} className={styles.imageItem}>
-                      <img src={img} alt={`صورة ${index + 1}`} />
+                      <div style={{ position: 'relative', width: '100%', height: '100px' }}>
+                        <Image src={img} alt={`صورة ${index + 1}`} fill style={{ objectFit: 'cover' }} />
+                      </div>
                       <button
                         type="button"
                         onClick={() => handleRemoveImage(index)}
